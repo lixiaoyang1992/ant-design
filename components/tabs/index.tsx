@@ -29,6 +29,7 @@ export interface TabsProps {
   prefixCls?: string;
   className?: string;
   animated?: boolean | { inkBar: boolean; tabPane: boolean; };
+  gutter?: number;
 }
 
 // Tabs
@@ -99,6 +100,7 @@ export default class Tabs extends React.Component<TabsProps, any> {
       onPrevClick,
       onNextClick,
       animated = true,
+      gutter,
     } = this.props;
 
     let { inkBarAnimated, tabPaneAnimated } = typeof animated === 'object' ? {
@@ -171,6 +173,7 @@ export default class Tabs extends React.Component<TabsProps, any> {
         onPrevClick={onPrevClick}
         onNextClick={onNextClick}
         style={tabBarStyle}
+        gutter={gutter}
       />
     );
 
